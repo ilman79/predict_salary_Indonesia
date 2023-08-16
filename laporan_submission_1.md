@@ -7,6 +7,13 @@ Pada bagian ini, kamu perlu menuliskan latar belakang yang relevan dengan proyek
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
 - Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
+  [referensi 1](https://bisnis.tempo.co/read/1759061/anies-baswedan-sebut-prioritas-cetak-lapangan-kerja-kepada-kaum-milenial?tracking_page_direct)
+  [referensi 2](https://finance.detik.com/berita-ekonomi-bisnis/d-5651000/kesulitan-bayar-gaji-karyawan-pengusaha-minta-pemerintah-subsidi-50)
+  [referensi 3](https://www.kompas.com/global/read/2023/08/05/180000470/laporan-terbaru-terkait-fenomena-wfh--gaji-kurang-kesejahteraan-nomor)
+  [referensi 4](https://www.antaranews.com/berita/1491480/viral-gaji-karyawan-rp20-juta-masih-kurang-lakukan-ini-saat-pandemi)
+  [referensi 5](http://eprints.undip.ac.id/28737/1/Jurnal.pdf)
+  [referensi 6](http://eprints.undip.ac.id/15830/1/Rita_Andini.pdf)
+
   
   Format Referensi: [Judul Referensi](https://scholar.google.com/) 
 
