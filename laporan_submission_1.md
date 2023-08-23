@@ -66,8 +66,10 @@ Kekeruhan air tergantung pada jumlah zat padat yang hadir dalam keadaan tergantu
 - Cara untuk mengatasi outlier adalah dengan mencari Q1 dan Q3 atau batas atas dan batas bawah dari dataset tersebut lalu apabila data tersebut berada melebihi batas atas maka akan dipisahkan dan begitu juga untuk untuk yang tidak berada dibatas bawah maka akan dipisahkan. Kita mengambil data yang berada pada range batas atas dan batas bawah. Hal ini bisa divisualisasikan dengan boxplot.
 - Setelah kita mengecek, beberapa data yang missing kita inputkan dan untuk outlier kita pisahkan dikarenakan mengantisipasi terjadinya bias.
 - Ketika sudah clean datanya maka kita bisa lihat insigt apa saja dengan melihat dari visualisasinya
-- Dilihat dari korelasi antar varibel []()
-
+![Gambar 1. Korelasi antaar variabel](https://raw.githubusercontent.com/ilman79/predict_salary_Indonesia/main/documentasi/gambar%201.png)
+- Dilihat dari korelasi antar varibel yaitu sangat rendah. Tetapi Hardness/kepadatan berkorelasi positif dengan ph untuk sisanya korelasinya rendah.
+![Gambar 2. Distribusi tiap variabel](https://raw.githubusercontent.com/ilman79/predict_salary_Indonesia/main/documentasi/gambar%202.png)
+- Dilihat dari distribusi tiap variabelnya sudah normal atau berbentuk lonceng.
 ## Data Preparation
 Pada bagian ini Kami menerapkan teknik split data dan standarisasi data untuk preparation yang dilakukan sebagai berikut.
 
@@ -76,19 +78,27 @@ Pada bagian ini Kami menerapkan teknik split data dan standarisasi data untuk pr
 - Standarisasi. Ini dilakukan karena satuan pada tiap-tiap variabel berbeda sehingga perlu adanya standarisasi agar menyamakan satuan contohnya besaran ph dan kadar sulfat itu berbeda satuannya ph batasnya sampai 13 tetapi kadar sulfat sampai 200. Sehingga terjadi ketimpangan. Rumusnya adalah mencari rata-rata dari seluruh dataset kemudian dibagi dengan standar deviasinya. Contohnya jika kita menggunakan algoritma k-N, yaitu mengukur jarak antar amatan jika dengan standarisasi membantu dalam mengukur jarak dengan konsisten dan akurat.
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan adalah Random Forest. 
 
 **Rubrik**: 
 - Karena kita memilih model Random Forest, yaitu modelnya sederhana, mampu untuk data besar dan mereduksi overviting karena hasilnya tunggal, kekurangannya adalah membutuhkan waktu lama untuk train modelnya dan kurang fleksibel dalam beberapa parameter.
+- parameternya
+  - n_estimator: jumlah trees (pohon) di forest. Di sini n_estimator=20.
+  - max_depth: kedalaman atau panjang pohon. Disini max_depth=16 untuk memecah jumlah pohon itu sebanyak 16 
+  - random_state: digunakan untuk mengontrol random number generator yang digunakan. Disini random_state=25. 
+  - n_jobs: jumlah job (pekerjaan) yang digunakan secara paralel. Disini n_jobs=-1 yaitu berjalan secara paralel dan
+- Cara kerja algoritma ini adalah yaitu menentukan banyaknya pohon/label terlebih dahulu misalkan pada kasus ini 20 label lalu buat percabangan lagi dari pohon tersebut sebanyak 16 mencari fitur terbaik di antara subset fitur yang acak hingga mendapatkan satu kesimpulan ya atau tidak
 - Model yang akan kita pilih ada dengan melihat mse nya, semakin msenya kecil maka semakin baik model tersebut
 
 ## Evaluation
 Untuk mengevaluasi model Random forest regresi yang kita pilih menggunakan mse atau Mean Squared Error
 - Metrik ini mengukur rata-rata perbedaan kuadrat antara nilai prediksi dan nilai aktual (ground truth) dari variabel target. Dengan kata lain, metrik ini menghitung rata-rata dari kesalahan kuadrat antara nilai prediksi dan nilai aktual.
 - Hasil dari metriksnya yaitu 0.061537. artinya 1 - 0.061537 = 93,9% akurasinya benar dan erorr sebesar 6,1% terjadi erorr
-
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
-
+|   |   |   |   |   |
+|---|---|---|---|---|
+|   |   |   |   |   |
+|   |   |   |   |   |
+|   |   |   |   |   |
 **Rubrik**: 
 ![](https://www.i2tutorials.com/wp-content/media/2019/11/Differences-between-MSE-and-RMSE-1-i2tutorials.jpg)
 
