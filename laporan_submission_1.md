@@ -85,10 +85,12 @@ Untuk mengevaluasi model Random forest regresi yang kita pilih menggunakan mse a
 Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
 
 **Rubrik/Kriteria Tambahan (Opsional)**: 
-- ![](https://www.i2tutorials.com/wp-content/media/2019/11/Differences-between-MSE-and-RMSE-1-i2tutorials.jpg)
+![](https://www.i2tutorials.com/wp-content/media/2019/11/Differences-between-MSE-and-RMSE-1-i2tutorials.jpg)
+
 Di mana:
-n : adalah jumlah titik data (sampel).
-​y : mewakili nilai aktual dari variabel target untuk titik data ke-i
-y^ : mewakili nilai prediksi dari variabel target untuk titik data ke-i.
+- n : adalah jumlah titik data (sampel).
+​- y : mewakili nilai aktual dari variabel target untuk titik data ke-i
+- y^ : mewakili nilai prediksi dari variabel target untuk titik data ke-i.
+
 **---Ini adalah bagian akhir laporan---**
 
