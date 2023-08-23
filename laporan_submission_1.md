@@ -5,11 +5,7 @@ Pada kondisi sekarang di Indonesia telah mengalami musim kemarau, hujan tidak tu
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Air merupakan zat yang diperlukan mahluk hidup sehingga membutuhkannya 
-- Adapun berita yang menyiarkan [BBC Indonesia](https://www.bbc.com/indonesia/articles/cydgj76p626o)
-
-  
-  Format Referensi: [Judul Referensi](https://scholar.google.com/) 
-
+- Adapun berita yang menyiarkan [BBC Indonesia - Kelangkaan Air Bersih](https://www.bbc.com/indonesia/articles/cydgj76p626o)
 ## Business Understanding
 
 Air sangat berguna bagi kehidupan tetapi alangkah baiknya kita menggunakan air yang bersih dan tidak tercemar oleh lingkungan. Bagaimana kita membedakan air yang dapat gunakan oleh kita sebagai manusia untuk kehidupan sehari-hari ? susah bukan untuk membedakannya. Maka dari itu, penting sekali kita tahu bahwa air itu layak untuk digunakan dan bagaimana cara membedakannya ? yaitu kita membuat suatu prediksi air yang layak untuk digunakan
