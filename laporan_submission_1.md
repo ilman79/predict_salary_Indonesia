@@ -89,7 +89,7 @@ Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, probl
 
 Di mana:
 - n : adalah jumlah titik data (sampel).
-​- y : mewakili nilai aktual dari variabel target untuk titik data ke-i
+- y : mewakili nilai aktual dari variabel target untuk titik data ke-i
 - y^ : mewakili nilai prediksi dari variabel target untuk titik data ke-i.
 
 **---Ini adalah bagian akhir laporan---**
