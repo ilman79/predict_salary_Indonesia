@@ -1,14 +1,15 @@
 # Laporan Proyek Machine Learning - Ilman Gifari
 
 ## Domain Proyek
-Pada kondisi sekarang di Indonesia telah mengalami musim kemarau, hujan tidak turun selama beberapa bulan sedangkan kita sebagai mahluk hidup ternasuk tumbuhan dan hewan memerlukan air. Tetapi air yang seperti apa ? yaitu air yang layak untuk digunakan untuk kehidupan. Air sangatlah penting untuk menunjang kehidupan mahluk hidup tapi bagaimana jika air yang kita gunakan tidak layak pakai, apalagi saat ini sedang musim kemarau di Indonesia, kita lihat disalah satu berita menyiarkan telah terjadi kekeringan dan kelangkaan air bersih bagaimana kita tahu bahwa air itu layak atau tidak ? sehingga perlu adanya teknologi untuk mengetahui air itu layak atau tidak digunakan.
+Pada kondisi sekarang di Indonesia telah mengalami musim kemarau, hujan tidak turun selama beberapa bulan sedangkan kita sebagai mahluk hidup termasuk tumbuhan dan hewan memerlukan air. Tetapi air yang seperti apa ? yaitu air yang layak untuk digunakan untuk kehidupan. Air sangatlah penting untuk menunjang kehidupan mahluk hidup tapi bagaimana jika air yang gunakan tidak layak pakai, apalagi saat ini sedang musim kemarau di Indonesia, disalah satu berita menyiarkan telah terjadi kekeringan dan kelangkaan air bersih bagaimana bahwa air itu layak atau tidak ? sehingga perlu adanya teknologi untuk mengetahui air itu layak atau tidak digunakan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
 - Air merupakan zat yang diperlukan mahluk hidup sehingga membutuhkannya 
 - Adapun berita yang menyiarkan [BBC Indonesia - Kelangkaan Air Bersih](https://www.bbc.com/indonesia/articles/cydgj76p626o)
+- Penelitian mengenai kualitas air sudah dilakukan oleh BRIN pada tahun 2018 dengan jurnalnya [Prediksi Kualitas Air Sungai Menggunakan Metode Pembelajaran Mesin: Studi Kasus Sungai Ciliwung](https://ejournal.brin.go.id/JTL/article/view/795#:~:text=Pada%20penelitian%20ini%2C%20pendekatan%20sains%20data%20menggunakan%20empat,Desember%202018%20untuk%20memprediksi%20kualitas%20air%20sungai%20Ciliwung.)
+- [Penelitian kualitas air pada isi ulang](http://digilib.unhas.ac.id/opac/detail-opac?id=7541)
+  
 ## Business Understanding
-
-Air sangat berguna bagi kehidupan tetapi alangkah baiknya kita menggunakan air yang bersih dan tidak tercemar oleh lingkungan. Bagaimana kita membedakan air yang dapat gunakan oleh kita sebagai manusia untuk kehidupan sehari-hari ? susah bukan untuk membedakannya. Maka dari itu, penting sekali kita tahu bahwa air itu layak untuk digunakan dan bagaimana cara membedakannya ? yaitu kita membuat suatu prediksi air yang layak untuk digunakan
+Air sangat berguna bagi kehidupan tetapi alangkah baiknya menggunakan air yang bersih dan tidak tercemar oleh lingkungan. Bagaimana membedakan air yang dapat gunakan oleh manusia untuk kehidupan sehari-hari ? susah bukan untuk membedakannya. Maka dari itu, penting sekali bahwa air itu layak untuk digunakan dan bagaimana cara membedakannya ? yaitu membuat suatu prediksi air yang layak untuk digunakan.
 
 ### Problem Statements
 Berdasarkan kondisi di atas perusahaan akan membuat sebuah sistem prediksi air untuk menjawab permasalahan berikut.
@@ -22,12 +23,13 @@ Untuk menjawab pertanyaan tersebut, tujuan kami membuat prediksi model
 - Mengetahui apa saja yang mempengaruhi kelayakan air
 - Membuat model machine learning yang dapat memprediksi kelayakan air dari variabel-variabel yang ada
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
+**Rubrik**:
 - Dikarenakan model algoritma machine learning banyak, maka kita akan menggunakan beberapa saja yaitu Random Forest, KNN dan Boosting dan masing-masing akan kita uji sekaligus memilih model dari hasil evaluasinya.
 
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. [dataset water potability](https://www.kaggle.com/datasets/adityakadiwal/water-potability).
 
+- Dataset yang kita gunakan yaitu Dataset Water Potability
 ### Variabel-variabel pada water potability adalah sebagai berikut:
 1. Nilai pH (ph):
 pH adalah parameter penting dalam mengevaluasi keseimbangan asam-basa air. Ini juga merupakan indikator kondisi asam atau basa dari status air. WHO telah merekomendasikan batas maksimum yang diizinkan untuk pH dari 6,5 hingga 8,5. Rentang investigasi saat ini adalah 6,52–6,83 yang berada dalam kisaran standar WHO.
@@ -58,22 +60,25 @@ Kekeruhan air tergantung pada jumlah zat padat yang hadir dalam keadaan tergantu
 
 10. Kepotabelan (Potability) : Menunjukkan apakah air aman untuk dikonsumsi manusia, di mana 1 berarti Layak Minum dan 0 berarti Tidak Layak Minum
     
-**Rubrik/Kriteria Tambahan (Opsional)**
+**Rubrik**
+- Jumlah Data set yang digunakan 3276 rows × 10 columns
 - Sebelum melakukan modeling, kita akan melihat insight apa saja yang didapat dari Proses Explanatory Data Analysis, yaitu bahwa kita mengecek data dan cleaning data terlebih dahulu dengan cara mengecek missing value, duplikasi data dan outlier
+- Cara untuk mengatasi outlier adalah dengan mencari Q1 dan Q3 atau batas atas dan batas bawah dari dataset tersebut lalu apabila data tersebut berada melebihi batas atas maka akan dipisahkan dan begitu juga untuk untuk yang tidak berada dibatas bawah maka akan dipisahkan. Kita mengambil data yang berada pada range batas atas dan batas bawah. Hal ini bisa divisualisasikan dengan boxplot.
 - Setelah kita mengecek, beberapa data yang missing kita inputkan dan untuk outlier kita pisahkan dikarenakan mengantisipasi terjadinya bias.
 - Ketika sudah clean datanya maka kita bisa lihat insigt apa saja dengan melihat dari visualisasinya
+- Dilihat dari korelasi antar varibel []()
 
 ## Data Preparation
 Pada bagian ini Kami menerapkan teknik split data dan standarisasi data untuk preparation yang dilakukan sebagai berikut.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Pembagian dataset dengan fungsi train_test_split dari library sklearn. Ini dilakukan untuk memisahkan/split data yaitu data train, dan data test
-- Standarisasi. Ini dilakukan karena satuan pada tiap-tiap variabel berbeda sehingga perlu adanya standarisasi agar menyamakan satuan
+**Rubrik**: 
+- Pembagian dataset dengan fungsi train_test_split dari library sklearn. Ini dilakukan untuk memisahkan/split data yaitu data train, dan data test. Untuk memisahkan data seumumnya menggunakan rasio 80:20, yaitu 80% data untuk train model, dan 20% untuk testing model. Data yang dipilih secara acak dari dataset
+- Standarisasi. Ini dilakukan karena satuan pada tiap-tiap variabel berbeda sehingga perlu adanya standarisasi agar menyamakan satuan contohnya besaran ph dan kadar sulfat itu berbeda satuannya ph batasnya sampai 13 tetapi kadar sulfat sampai 200. Sehingga terjadi ketimpangan. Rumusnya adalah mencari rata-rata dari seluruh dataset kemudian dibagi dengan standar deviasinya. Contohnya jika kita menggunakan algoritma k-N, yaitu mengukur jarak antar amatan jika dengan standarisasi membantu dalam mengukur jarak dengan konsisten dan akurat.
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
+**Rubrik**: 
 - Karena kita memilih model Random Forest, yaitu modelnya sederhana, mampu untuk data besar dan mereduksi overviting karena hasilnya tunggal, kekurangannya adalah membutuhkan waktu lama untuk train modelnya dan kurang fleksibel dalam beberapa parameter.
 - Model yang akan kita pilih ada dengan melihat mse nya, semakin msenya kecil maka semakin baik model tersebut
 
@@ -84,7 +89,7 @@ Untuk mengevaluasi model Random forest regresi yang kita pilih menggunakan mse a
 
 Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
+**Rubrik**: 
 ![](https://www.i2tutorials.com/wp-content/media/2019/11/Differences-between-MSE-and-RMSE-1-i2tutorials.jpg)
 
 Di mana:
