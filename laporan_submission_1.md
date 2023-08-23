@@ -56,7 +56,7 @@ THM adalah bahan kimia yang dapat ditemukan dalam air yang diolah dengan klorin.
 9. Kekeruhan (Turbidity) :
 Kekeruhan air tergantung pada jumlah zat padat yang hadir dalam keadaan tergantung. Ini adalah ukuran sifat emisi cahaya air dan tes ini digunakan untuk mengindikasikan kualitas pembuangan limbah dengan mengacu pada materi koloid. Nilai kekeruhan rata-rata yang diperoleh untuk Kampus Wondo Genet (0,98 NTU) lebih rendah dari nilai yang direkomendasikan oleh WHO yaitu 5,00 NTU.
 
-10. Kepotabelan (Potability) :
+10. Kepotabelan (Potability) : Menunjukkan apakah air aman untuk dikonsumsi manusia, di mana 1 berarti Layak Minum dan 0 berarti Tidak Layak Minum
     
 **Rubrik/Kriteria Tambahan (Opsional)**
 - Sebelum melakukan modeling, kita akan melihat insight apa saja yang didapat dari Proses Explanatory Data Analysis, yaitu bahwa kita mengecek data dan cleaning data terlebih dahulu dengan cara mengecek missing value, duplikasi data dan outlier
