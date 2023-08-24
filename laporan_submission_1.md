@@ -1,15 +1,12 @@
 # Laporan Proyek Machine Learning - Ilman Gifari
 
 ## Domain Proyek
-Pada kondisi sekarang di Indonesia telah mengalami musim kemarau, hujan tidak turun selama beberapa bulan sedangkan kita sebagai mahluk hidup termasuk tumbuhan dan hewan memerlukan air. Tetapi air yang seperti apa ? yaitu air yang layak untuk digunakan untuk kehidupan. Air sangatlah penting untuk menunjang kehidupan mahluk hidup tapi bagaimana jika air yang gunakan tidak layak pakai, apalagi saat ini sedang musim kemarau di Indonesia, disalah satu berita menyiarkan telah terjadi kekeringan dan kelangkaan air bersih bagaimana bahwa air itu layak atau tidak ? sehingga perlu adanya teknologi untuk mengetahui air itu layak atau tidak digunakan.
+Pada kondisi sekarang di Indonesia telah mengalami musim kemarau, hujan tidak turun selama beberapa bulan sedangkan mahluk hidup termasuk tumbuhan dan hewan memerlukan air. Tetapi air yang seperti apa ? yaitu air yang layak untuk digunakan untuk kehidupan. Air sangatlah penting untuk menunjang kehidupan mahluk hidup tapi bagaimana jika air yang gunakan tidak layak pakai, apalagi saat ini sedang musim kemarau di Indonesia, disalah satu berita menyiarkan telah terjadi kekeringan dan kelangkaan air bersih bagaimana bahwa air itu layak atau tidak ? sehingga perlu adanya teknologi untuk mengetahui air itu layak atau tidak digunakan.
 
-- Air merupakan zat yang diperlukan mahluk hidup sehingga membutuhkannya 
-- Adapun berita yang menyiarkan [BBC Indonesia - Kelangkaan Air Bersih](https://www.bbc.com/indonesia/articles/cydgj76p626o)
-- Penelitian mengenai kualitas air sudah dilakukan oleh BRIN pada tahun 2018 dengan jurnalnya [Prediksi Kualitas Air Sungai Menggunakan Metode Pembelajaran Mesin: Studi Kasus Sungai Ciliwung](https://ejournal.brin.go.id/JTL/article/view/795#:~:text=Pada%20penelitian%20ini%2C%20pendekatan%20sains%20data%20menggunakan%20empat,Desember%202018%20untuk%20memprediksi%20kualitas%20air%20sungai%20Ciliwung.)
 - [Penelitian kualitas air pada isi ulang](http://digilib.unhas.ac.id/opac/detail-opac?id=7541)
   
 ## Business Understanding
-Air sangat berguna bagi kehidupan tetapi alangkah baiknya menggunakan air yang bersih dan tidak tercemar oleh lingkungan. Bagaimana membedakan air yang dapat gunakan oleh manusia untuk kehidupan sehari-hari ? susah bukan untuk membedakannya. Maka dari itu, penting sekali bahwa air itu layak untuk digunakan dan bagaimana cara membedakannya ? yaitu membuat suatu prediksi air yang layak untuk digunakan.
+Air sangat berguna bagi kehidupan tetapi alangkah baiknya menggunakan air yang bersih dan tidak tercemar oleh lingkungan. Bagaimana membedakan air yang dapat gunakan oleh manusia untuk kehidupan sehari-hari ?. Maka dari itu, penting sekali bahwa air itu layak untuk digunakan dan bagaimana cara membedakannya ? yaitu membuat suatu prediksi air yang layak untuk digunakan.
 
 ### Problem Statements
 Berdasarkan kondisi di atas perusahaan akan membuat sebuah sistem prediksi air untuk menjawab permasalahan berikut.
@@ -21,10 +18,10 @@ Berdasarkan kondisi di atas perusahaan akan membuat sebuah sistem prediksi air u
 
 Untuk menjawab pertanyaan tersebut, tujuan kami membuat prediksi model
 - Mengetahui apa saja yang mempengaruhi kelayakan air
-- Membuat model machine learning yang dapat memprediksi kelayakan air dari variabel-variabel yang ada
+- Membuat model *machine learning* yang dapat memprediksi kelayakan air dari variabel-variabel yang ada
 
 **Rubrik**:
-- Dikarenakan model algoritma machine learning banyak, maka kita akan menggunakan beberapa saja yaitu *Random Forest*, *k-NN* dan *Boosting* dan masing-masing akan kita uji sekaligus memilih model dari hasil evaluasinya.
+- Pada kali ini menggunakan beberapa saja jenis model yaitu *Random Forest*, *k-NN* dan *Boosting* dan masing-masing akan uji sekaligus memilih model dari hasil evaluasinya.
 
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. [dataset water potability](https://www.kaggle.com/datasets/adityakadiwal/water-potability).
@@ -60,7 +57,6 @@ Kekeruhan air tergantung pada jumlah zat padat yang hadir dalam keadaan tergantu
 
 10. Kepotabelan (*Potability*) : Menunjukkan apakah air aman untuk dikonsumsi manusia, di mana 1 berarti Layak Minum dan 0 berarti Tidak Layak Minum
     
-**Rubrik**
 - Jumlah Data set yang digunakan 3276 rows × 10 columns
 - Sebelum melakukan modeling, kita akan melihat insight apa saja yang didapat dari Proses *Explanatory Data Analysis*, yaitu bahwa kita mengecek data dan cleaning data terlebih dahulu dengan cara mengecek *missing value*, duplikasi data dan *outlier*
 - Cara untuk mengatasi *outlier* adalah dengan mencari Q1 dan Q3 atau batas atas dan batas bawah dari dataset tersebut lalu apabila data tersebut berada melebihi batas atas maka akan dipisahkan dan begitu juga untuk untuk yang tidak berada dibatas bawah maka akan dipisahkan. Kita mengambil data yang berada pada range batas atas dan batas bawah. Hal ini bisa divisualisasikan dengan *boxplot*.
@@ -74,19 +70,17 @@ Kekeruhan air tergantung pada jumlah zat padat yang hadir dalam keadaan tergantu
 ## Data Preparation
 Pada bagian ini Kami menerapkan teknik *split data* dan *standarisasi* data untuk preparation yang dilakukan sebagai berikut.
 
-**Rubrik**: 
 - Pembagian dataset dengan fungsi *train_test_split* dari *library sklearn*. Ini dilakukan untuk memisahkan/split data yaitu *data train*, dan *data test*. Untuk memisahkan data seumumnya menggunakan rasio 80:20, yaitu 80% data untuk train model, dan 20% untuk *testing model*. Data yang dipilih secara acak dari dataset
 - *Standarisasi*. Ini dilakukan karena satuan pada tiap-tiap variabel berbeda sehingga perlu adanya standarisasi agar menyamakan satuan contohnya besaran ph dan kadar sulfat itu berbeda satuannya ph batasnya sampai 13 tetapi kadar sulfat sampai 200. Sehingga terjadi ketimpangan. Rumusnya adalah mencari rata-rata dari seluruh dataset kemudian dibagi dengan standar deviasinya. Contohnya jika kita menggunakan *algoritma k-NN*, yaitu mengukur jarak antar amatan jika dengan standarisasi membantu dalam mengukur jarak dengan konsisten dan akurat.
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan adalah Boosting. 
+Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan adalah Boosting. Cara kerja *algoritma* ini adalah yaitu metode yang mengkombinasikan pengklasifikasi lemah menjadi pengklasifikasi yang kuat. Di dalam metode *boosting* diperkenalkan adanya *iterasi* atau perulangan. Dalam tiap iterasi learning-nya, dibangun model hasil prediksi data latih dan kemudian disampel ulang untuk masuk pada itrasi berikutnya.
 
 **Rubrik**: 
 - Karena kita memilih model Boosting, yaitu modelnya sederhana, dapat digunakan dengan berbagai jenis model lemah seperti pohon keputusan dangkal, regresi linear, atau model yang lebih kompleks dan kekurangannya adalah sensitif terhadap *noise*, dan memerlukan waktu lama karena terjadi iterasi untuk mendapatkan model terbaik
 - parameternya
   - *learning_rate*: bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting. Disini *learning_rate=0.05*
   - *random_state*: digunakan untuk mengontrol random number generator yang digunakan. Disini *random_state=55*
-- Cara kerja *algoritma* ini adalah yaitu metode yang mengkombinasikan pengklasifikasi lemah menjadi pengklasifikasi yang kuat. Di dalam metode *boosting* diperkenalkan adanya *iterasi* atau perulangan. Dalam tiap iterasi learning-nya, dibangun model hasil prediksi data latih dan kemudian disampel ulang untuk masuk pada itrasi berikutnya.
 - Model yang akan kita pilih ada dengan melihat msenya, semakin msenya kecil maka semakin baik model tersebut
 
 ## Evaluation
