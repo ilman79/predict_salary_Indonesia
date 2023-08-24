@@ -1,12 +1,10 @@
 # Laporan Proyek Machine Learning - Ilman Gifari
 
 ## Domain Proyek
-Pada kondisi sekarang di Indonesia telah mengalami musim kemarau, hujan tidak turun selama beberapa bulan sedangkan mahluk hidup termasuk tumbuhan dan hewan memerlukan air. Tetapi air yang seperti apa ? yaitu air yang layak untuk digunakan untuk kehidupan. Air sangatlah penting untuk menunjang kehidupan mahluk hidup tapi bagaimana jika air yang gunakan tidak layak pakai, apalagi saat ini sedang musim kemarau di Indonesia, disalah satu berita menyiarkan telah terjadi kekeringan dan kelangkaan air bersih bagaimana bahwa air itu layak atau tidak ? sehingga perlu adanya teknologi untuk mengetahui air itu layak atau tidak digunakan.
-
-- [Penelitian kualitas air pada isi ulang](http://digilib.unhas.ac.id/opac/detail-opac?id=7541)
+Pada kondisi sekarang di Indonesia telah mengalami musim kemarau, hujan tidak turun selama beberapa bulan sedangkan mahluk hidup termasuk tumbuhan dan hewan memerlukan air. Tetapi air yang seperti apa ? yaitu air yang layak untuk digunakan untuk kehidupan. Air sangatlah penting untuk menunjang kehidupan mahluk hidup tapi bagaimana jika air yang gunakan tidak layak pakai, apalagi saat ini sedang musim kemarau di Indonesia, disalah satu berita menyiarkan telah terjadi kekeringan dan kelangkaan air bersih bagaimana bahwa air itu layak atau tidak ? sehingga perlu adanya teknologi untuk mengetahui air itu layak atau tidak digunakan. [1]
   
 ## Business Understanding
-Air sangat berguna bagi kehidupan tetapi alangkah baiknya menggunakan air yang bersih dan tidak tercemar oleh lingkungan. Bagaimana membedakan air yang dapat gunakan oleh manusia untuk kehidupan sehari-hari ?. Maka dari itu, penting sekali bahwa air itu layak untuk digunakan dan bagaimana cara membedakannya ? yaitu membuat suatu prediksi air yang layak untuk digunakan.
+Air sangat berguna bagi kehidupan tetapi alangkah baiknya menggunakan air yang bersih dan tidak tercemar oleh lingkungan. Bagaimana membedakan air yang dapat gunakan oleh manusia untuk kehidupan sehari-hari ?. Maka dari itu, penting sekali bahwa air itu layak untuk digunakan dan bagaimana cara membedakannya yaitu membuat suatu prediksi air yang layak untuk digunakan.
 
 ### Problem Statements
 Berdasarkan kondisi di atas perusahaan akan membuat sebuah sistem prediksi air untuk menjawab permasalahan berikut.
@@ -129,6 +127,12 @@ Di mana:
 - Model yang dipilih adalah *Random Forest* walaupun untuk msenya terbesar saat train tetapi untuk probabilitasnya tertinggi daripada yang lain.
 - Sudah bisa memprediksi kelayakan air dan juga masyarakat mengetahui yang mempengaruhi kelayakan air adalah kepadatan
 - Diharapkan pada saat kondisi seperti musim kemarau masyarakat bisa terbantu dalam memilih air yang layak digunakan
+
+
+**Daftar Referensi**
+
+[1] PENERAPAN ALGORITMA MACHINE LEARNIN G UNTUK DETEKSI KUALITAS AIR | PERPUSTAKAAN UNIVERSITAS HASANUDDIN.” Accessed August 25, 2023. http://digilib.unhas.ac.id/opac/detail-opac?id=7541.
+
 
 **---Ini adalah bagian akhir laporan---**
 
