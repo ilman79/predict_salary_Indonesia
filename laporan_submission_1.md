@@ -106,11 +106,11 @@ Hasil prediksi dari tiap-tiap *algoritma machine learning*nya. Yang menjadi acua
 
 - Hasil probabilitas kebenaran
 
-|          | y_true | prediksi_KNN | Prediksi_RF |
-|----------|--------|--------------|-------------|
-| KNN      | 328    | 206          | 0.614232    |
-| RF       | 336    | 198          | 0.629213    |
-| Boosting | 339    | 195          | 0.634831    |
+|          | correct_predictions   | incorrect_predictions   | probabilitas_true |
+|----------|-----------------------|-------------------------|-------------------|
+| KNN      |          328          |            206          |      0.614232     |
+| RF       |          336          |            198          |      0.629213     |
+| Boosting |          339          |            195          |      0.634831     |
 
 Dihasilkan bahwa jumlah yang sesuai dengan y_true adalah algoritma Boosting sebesar 0.634831 dan hasil probabilitas terkecil yaitu KNN sebesar 0.614232. Maka dari itu evaluasi model terbaik yang akan digunakan adalah algoritma Boosting yang memiliki *probabilitas* benar lebih tinggi dari yang lain.
 
