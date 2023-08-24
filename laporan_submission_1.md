@@ -70,35 +70,48 @@ Kekeruhan air tergantung pada jumlah zat padat yang hadir dalam keadaan tergantu
 - Dilihat dari korelasi antar varibel yaitu sangat rendah. Tetapi Hardness/kepadatan berkorelasi positif dengan ph untuk sisanya korelasinya rendah.
 ![Gambar 2. Distribusi tiap variabel](https://raw.githubusercontent.com/ilman79/predict_salary_Indonesia/main/documentasi/gambar%202.png)
 - Dilihat dari distribusi tiap variabelnya sudah normal atau berbentuk lonceng.
+- Tidak ada outlier yang terlalu signifikan
 ## Data Preparation
 Pada bagian ini Kami menerapkan teknik split data dan standarisasi data untuk preparation yang dilakukan sebagai berikut.
 
 **Rubrik**: 
 - Pembagian dataset dengan fungsi train_test_split dari library sklearn. Ini dilakukan untuk memisahkan/split data yaitu data train, dan data test. Untuk memisahkan data seumumnya menggunakan rasio 80:20, yaitu 80% data untuk train model, dan 20% untuk testing model. Data yang dipilih secara acak dari dataset
-- Standarisasi. Ini dilakukan karena satuan pada tiap-tiap variabel berbeda sehingga perlu adanya standarisasi agar menyamakan satuan contohnya besaran ph dan kadar sulfat itu berbeda satuannya ph batasnya sampai 13 tetapi kadar sulfat sampai 200. Sehingga terjadi ketimpangan. Rumusnya adalah mencari rata-rata dari seluruh dataset kemudian dibagi dengan standar deviasinya. Contohnya jika kita menggunakan algoritma k-N, yaitu mengukur jarak antar amatan jika dengan standarisasi membantu dalam mengukur jarak dengan konsisten dan akurat.
+- Standarisasi. Ini dilakukan karena satuan pada tiap-tiap variabel berbeda sehingga perlu adanya standarisasi agar menyamakan satuan contohnya besaran ph dan kadar sulfat itu berbeda satuannya ph batasnya sampai 13 tetapi kadar sulfat sampai 200. Sehingga terjadi ketimpangan. Rumusnya adalah mencari rata-rata dari seluruh dataset kemudian dibagi dengan standar deviasinya. Contohnya jika kita menggunakan algoritma k-NN, yaitu mengukur jarak antar amatan jika dengan standarisasi membantu dalam mengukur jarak dengan konsisten dan akurat.
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan adalah Random Forest. 
+Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan adalah Boosting. 
 
 **Rubrik**: 
-- Karena kita memilih model Random Forest, yaitu modelnya sederhana, mampu untuk data besar dan mereduksi overviting karena hasilnya tunggal, kekurangannya adalah membutuhkan waktu lama untuk train modelnya dan kurang fleksibel dalam beberapa parameter.
+- Karena kita memilih model Boosting, yaitu modelnya sederhana, mampu untuk data besar dan mereduksi overviting karena hasilnya tunggal, kekurangannya adalah membutuhkan waktu lama untuk train modelnya dan kurang fleksibel dalam beberapa parameter.
 - parameternya
-  - n_estimator: jumlah trees (pohon) di forest. Di sini n_estimator=20.
-  - max_depth: kedalaman atau panjang pohon. Disini max_depth=16 untuk memecah jumlah pohon itu sebanyak 16 
-  - random_state: digunakan untuk mengontrol random number generator yang digunakan. Disini random_state=25. 
-  - n_jobs: jumlah job (pekerjaan) yang digunakan secara paralel. Disini n_jobs=-1 yaitu berjalan secara paralel dan
-- Cara kerja algoritma ini adalah yaitu menentukan banyaknya pohon/label terlebih dahulu misalkan pada kasus ini 20 label lalu buat percabangan lagi dari pohon tersebut sebanyak 16 mencari fitur terbaik di antara subset fitur yang acak hingga mendapatkan satu kesimpulan ya atau tidak
-- Model yang akan kita pilih ada dengan melihat mse nya, semakin msenya kecil maka semakin baik model tersebut
+  - learning_rate: bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting. Disini learning_rate=0.05
+  - random_state: digunakan untuk mengontrol random number generator yang digunakan. Disini random_state=55
+- Cara kerja algoritma ini adalah yaitu metode yang mengkombinasikan pengklasifikasi lemah menjadi pengklasifikasi yang kuat. Di dalam metode boosting diperkenalkan adanya iterasi. Dalam tiap iterasi learning-nya, dibangun model hasil prediksi data latih dan kemudian disampel ulang untuk masuk pada itrasi berikutnya.
+- Model yang akan kita pilih ada dengan melihat msenya, semakin msenya kecil maka semakin baik model tersebut
 
 ## Evaluation
 Untuk mengevaluasi model Random forest regresi yang kita pilih menggunakan mse atau Mean Squared Error
 - Metrik ini mengukur rata-rata perbedaan kuadrat antara nilai prediksi dan nilai aktual (ground truth) dari variabel target. Dengan kata lain, metrik ini menghitung rata-rata dari kesalahan kuadrat antara nilai prediksi dan nilai aktual.
-- Hasil dari metriksnya yaitu 0.061537. artinya 1 - 0.061537 = 93,9% akurasinya benar dan erorr sebesar 6,1% terjadi erorr
-|   |   |   |   |   |
-|---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+- Hasil dari metriksnya yaitu 0.061537. artinya 1 - 0.223218 = 77,7% akurasinya benar dan erorr sebesar 22,3% terjadi erorr
+  
+|      | y_true | prediksi_KNN | Prediksi_RF | Prediksi_Boosting |
+|------|--------|--------------|-------------|-------------------|
+| 424  | 0      | 0            | 1           | 0                 |
+| 301  | 1      | 1            | 0           | 0                 |
+| 1813 | 0      | 0            | 0           | 0                 |
+
+Hasil prediksi dari tiap-tiap algoritma machine learningnya. Yang menjadi acuannya adalah y_true, apabila ia bernilai 1 maka air layak digunakan, jika bernilai 0 maka air tidak layak digunakan. lalu kita akan lihat berapa probabilitas prediksi pada masing-masing model
+
+- Hasil probabilitas kebenaran
+
+|          | y_true | prediksi_KNN | Prediksi_RF |
+|----------|--------|--------------|-------------|
+| KNN      | 328    | 206          | 0.614232    |
+| RF       | 336    | 198          | 0.629213    |
+| Boosting | 339    | 195          | 0.634831    |
+
+Dihasilkan bahwa jumlah yang sesuai dengan y_true adalah algoritma Boosting sebesar 0.634831 dan hasil probabilitas terkecil yaitu KNN sebesar 0.614232. Maka dari itu evaluasi model terbaik yang akan digunakan adalah algoritma Boosting yang memiliki probabilitas benar lebih tinggi dari yang lain.
+
 **Rubrik**: 
 ![](https://www.i2tutorials.com/wp-content/media/2019/11/Differences-between-MSE-and-RMSE-1-i2tutorials.jpg)
 
