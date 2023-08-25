@@ -84,6 +84,15 @@ Tahapan ini membahas mengenai model *machine learning* yang digunakan untuk meny
   - max_depth=16, Banyak percabangan hingga menjadi perindividu
   - _jobs=-1 Disini menggunakan -1 untuk cara kerjanya pararel
   - *random_state*: digunakan untuk mengontrol random number generator yang digunakan. Disini *random_state=25*
+
+- Dengan memilih model *Boosting*, yaitu modelnya sederhana, dapat digunakan untuk data besar, dan kekurangannya adalah memerlukan waktu lama karena untuk mendapatkan model terbaik
+- parameternya
+  - learning_rate=0.05, diberikan nilai 0.05, yang mengontrol sejauh mana setiap model lemah (weak learner) memberikan kontribusi terhadap prediksi akhir.
+  - *random_state*: digunakan untuk mengontrol random number generator yang digunakan. Disini *random_state=25*
+    
+- Dengan memilih model *k-NN*, yaitu modelnya sederhana, dapat digunakan untuk data besar, dan kekurangannya adalah memerlukan waktu lama karena untuk mendapatkan model terbaik
+- parameternya
+  - n_neighbors=10, 10 tetangga terdekat saat melakukan prediksi
 - Model yang akan pilih adalah dengan melihat msenya, semakin msenya kecil maka semakin baik model tersebut
 
 ## Evaluation
